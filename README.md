@@ -71,7 +71,8 @@ __Parte I. Backend.__
 	* Para que un recurso REST tenga una representación diferente a la estándar (JSON), en particular un archivo, el método correspondiente del controlador REST debe retornar algo de tipo:
 
 	```
-	ResponseEntity<InputStreamResource>	
+	ResponseEntityInputStreamResource
+	
 	```
 
 	Con lo anterior, el controlador puede construir la respuesta (en este caso con una imagen), usando la clase ResponseEntity:	
