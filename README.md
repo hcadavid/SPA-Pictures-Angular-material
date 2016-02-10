@@ -13,8 +13,7 @@ través de una librería provista por un tercero.
 
 __Parte I. Backend.__
 
-1.  En el pom.xml agregue el siguiente repositorio de dependencias (el cual
-    contiene la librería requerida):
+1.  En el pom.xml agregue el siguiente repositorio de dependencias (el cual contiene la librería requerida):
 
 	```
         <repository>
@@ -69,14 +68,18 @@ __Parte I. Backend.__
     public InputStream getClientPicture(int id) throws CliendLoadException;
 	```
 
-	* Para que un recurso REST tenga una representación diferente a la estándar (JSON), en particular un archivo, el método correspondiente del controlador REST debe retornar algo de tipo 	```
+	* Para que un recurso REST tenga una representación diferente a la estándar (JSON), en particular un archivo, el método correspondiente del controlador REST debe retornar algo de tipo:
+
+	```
 	ResponseEntity<InputStreamResource>	
 	```
 
-		Con lo anterior, el controlador puede construir la respuesta (en este caso con una imagen), usando la clase ResponseEntity:	
+	Con lo anterior, el controlador puede construir la respuesta (en este caso con una imagen), usando la clase ResponseEntity:	
 	```		ResponseEntity.ok().contentType(MediaType.parseMediaType("image/jpg")).body(new InputStreamResource(EL_INPUT_STREAM_DE_LA_IMAGEN));
 	```
-		Y en caso de error (por ejemplo si no se puede consultar la imagen), retornar un objeto ResponseEntity vacío que tenga el código NOT_FOUND de HTTP:
+	
+	Y en caso de error (por ejemplo si no se puede consultar la imagen), retornar un objeto ResponseEntity vacío que tenga el código NOT_FOUND de HTTP:
+	
 	```				
 		return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 	```		
