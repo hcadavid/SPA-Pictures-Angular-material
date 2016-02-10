@@ -5,9 +5,6 @@
 ### Taller - frameworks MVC Web - Elementos visuales.
 
  
-https://material.angularjs.org/latest/demo/dialog
-
- 
 
 Se quiere, en el proyecto trabajado en sesiones anteriores, agregar una vista en
 la que se muestren los usuarios inscritos en la aplicación de TODOs, incluyendo
